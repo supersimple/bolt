@@ -6,6 +6,10 @@ A green light means everything is normal.
 If connection becomes latent, or drops packets, you will see a yellow light.
 If the connection is down or drops 100% of packets, you get a red light and the relay cycles the power.
 
+## FPING
+
+This nerves build requires fping. The fping nerves system is located at: https://github.com/supersimple/fping_rpi0
+
 ## Future Goals
 - Publish API to show current performance.
 - Send a text message when router is restarting
