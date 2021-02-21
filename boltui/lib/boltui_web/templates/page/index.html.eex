@@ -1,0 +1,10 @@
+<table class="ping_table">
+<tr><th>Packet Loss</th><th>Ping Time</th><th>Timestamp</th></tr>
+<%= for ping <- @data do %>
+<tr>
+  <td><%= ping.packet_loss %>%</td>
+  <td><%= Float.round(ping.time, 3) %>ms</td>
+  <td><%= ping.timestamp %></td>
+</tr>
+<% end %>
+</table>
