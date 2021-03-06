@@ -1,6 +1,27 @@
 /* This file is for your main application css. */
-@import "./phoenix.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+
+body {
+  @apply bg-gray-900;
+  h1 {
+    @apply text-white text-center text-4xl p-4 font-black;
+  }
+  .table_container {@apply bg-gray-100 rounded pb-4 shadow;}
+  .ping_table {
+    @apply w-full;
+    tr:nth-child(even){@apply bg-gray-300;}
+    th {
+      @apply text-sm text-gray-700 w-1/3 text-left p-4 border-b border-gray-700;
+    }
+    td {
+      @apply text-sm text-gray-700 w-1/3 text-left p-4 border-b border-gray-700;
+    }
+    
+  }
+}
 /* Alerts and form errors */
 .alert {
   padding: 15px;

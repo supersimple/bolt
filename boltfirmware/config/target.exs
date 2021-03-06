@@ -1,15 +1,15 @@
 import Config
 
-config :boltui, BoltUiWeb.Endpoint,
-  url: [host: "nerves.local"],
-  http: [port: 4140],
+config :boltui, BoltuiWeb.Endpoint,
+  url: [host: "bolt.local"],
+  http: [port: 80],
   secret_key_base: "HEY05EB1dFVSu6KykKHuS4rQPQzSHv4F7mGVB/gnDLrIu75wE/ytBXy2TaL3A6RA",
   live_view: [signing_salt: "AAAABjEyERMkxgDh"],
   check_origin: false,
   root: Path.dirname(__DIR__),
   server: true,
-  render_errors: [view: BoltUiWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: BoltUi.PubSub,
+  render_errors: [view: BoltuiWeb.ErrorView, accepts: ~w(html json)],
+  pubsub_server: Boltui.PubSub,
   code_reloader: false
 
 # Use shoehorn to start the main application. See the shoehorn
@@ -87,7 +87,7 @@ config :mdns_lite,
   # "nerves.local" for convenience. If more than one Nerves device is on the
   # network, delete "nerves" from the list.
 
-  host: [:hostname, "nerves"],
+  host: [:hostname, "bolt"],
   ttl: 120,
 
   # Advertise the following services over mDNS.

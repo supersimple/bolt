@@ -36,6 +36,7 @@ defmodule Boltfirmware.MixProject do
       {:ring_logger, "~> 0.8.1"},
       {:toolshed, "~> 0.2.13"},
       {:circuits_gpio, "~> 0.4"},
+      {:boltui, path: "../boltui"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.11.3", targets: @all_targets},
@@ -52,7 +53,7 @@ defmodule Boltfirmware.MixProject do
       {:nerves_system_bbb, "~> 2.8", runtime: false, targets: :bbb},
       {:nerves_system_osd32mp1, "~> 0.4", runtime: false, targets: :osd32mp1},
       {:nerves_system_x86_64, "~> 1.13", runtime: false, targets: :x86_64},
-      {:fping_rpi0, path: "../fping_rpi0", runtime: false, targets: :fping_rpi0}
+      {:fping_rpi0, github: "supersimple/fping_rpi0", runtime: false, targets: :fping_rpi0}
     ]
   end
 

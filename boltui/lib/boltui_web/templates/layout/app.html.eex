@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>BoltUi</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <style>
-      tr:nth-child(even){background-color: #f5f5f5;}
-      td {font-size: 0.75em;}
-    </style>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
-    <main role="main" class="container">
+    <main role="main" class="container mx-auto">
       <%= @inner_content %>
     </main>
   </body>
