@@ -15,7 +15,8 @@ defmodule Boltfirmware.Application do
         Boltfirmware.PingServer,
         Boltfirmware.ResetServer,
         Boltfirmware.GPIO,
-        Boltfirmware.Data
+        Boltfirmware.Data,
+        VintageNetWizard.run_wizard
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)

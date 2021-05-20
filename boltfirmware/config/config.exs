@@ -29,6 +29,12 @@ config :nerves, :firmware, rootfs_overlay: "rootfs_overlay"
 
 config :nerves, source_date_epoch: "1613853447"
 
+config :vintage_net_wizard,
+  dns_name: "bolt-setup",
+  port: 8017,
+  inactivity_timeout: 5,
+  captive_portal: false
+
 # Use Ringlogger as the logger backend and remove :console.
 # See https://hexdocs.pm/ring_logger/readme.html for more information on
 # configuring ring_logger.
