@@ -79,5 +79,4 @@ defmodule BoltuiWeb.LineGraph do
   defp to_polyline_points(list) do
     Enum.reduce(list, "", fn {y, x}, acc -> acc <> "#{x}, #{y} " end)
   end
-
 end

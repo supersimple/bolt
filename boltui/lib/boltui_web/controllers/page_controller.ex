@@ -6,6 +6,7 @@ defmodule BoltuiWeb.PageController do
     data = [
       %{packet_loss: 0.0, time: 13.13343, timestamp: DateTime.utc_now()}
     ]
+
     render(conn, "index.html", data: data)
   end
 end
