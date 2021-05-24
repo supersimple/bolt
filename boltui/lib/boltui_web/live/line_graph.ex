@@ -60,7 +60,7 @@ defmodule BoltuiWeb.LineGraph do
   end
 
   def schedule_work() do
-    Process.send_after(self(), :work, 5_000)
+    Process.send_after(self(), :work, 30_000)
   end
 
   defp points_to_graph({min, max}, data) do
