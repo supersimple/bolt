@@ -15,16 +15,29 @@ defmodule BoltuiWeb.LineGraph do
     <polyline fill="none" id="ping_graph" points="<%= @ping_points %>" />
     </svg>
     </div>
+    <div class="table_container">
+      <table class="ping_table">
+        <tr><th><em id="loss_legend"></em> Packet Loss</th><th><em id="ping_legend"></em> Ping Time</th><th>Timestamp</th></tr>
+        <%= for ping <- @data do %>
+        <tr>
+          <td><%= ping.packet_loss %>%</td>
+          <td><%= Float.round(ping.time, 3) %>ms</td>
+          <td><%= ping.timestamp %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
     """
   end
 
   @impl true
-  def mount(_params, session, socket) do
+  def mount(_params, _session, socket) do
     schedule_work()
     Process.send(self(), :work, [])
 
     {:ok,
      assign(socket,
+       data: [],
        loss_points: [],
        ping_points: []
      )}
@@ -54,6 +67,7 @@ defmodule BoltuiWeb.LineGraph do
 
     {:noreply,
      assign(socket,
+       data: data,
        loss_points: loss_points,
        ping_points: ping_points
      )}

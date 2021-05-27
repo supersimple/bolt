@@ -51,7 +51,7 @@ defmodule Boltfirmware.PingServer do
   defp calculate_results(result_rows) do
     {total_packet_loss, total_time, number_of_rows} =
       Enum.reduce(result_rows, {0, 0, 0}, fn %{"loss" => loss, "time" => time}, {l, t, c} ->
-        {String.to_integer(loss) + l, String.to_float(time) + t, c + 1}
+        {String.to_integer(loss) + l, time_to_float(time) + t, c + 1}
       end)
 
     %{
@@ -75,5 +75,10 @@ defmodule Boltfirmware.PingServer do
     data = Map.put(response, :timestamp, DateTime.utc_now())
     Data.put(data)
     response
+  end
+
+  defp time_to_float(binary_int_or_float) do
+    {flt, _rest} = Float.parse(binary_int_or_float)
+    flt
   end
 end

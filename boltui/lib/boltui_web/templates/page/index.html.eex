@@ -1,14 +1,3 @@
 <h1>Bolt</h1>
 <%= live_render @conn, BoltuiWeb.LineGraph, id: "graph-24hr" %>
-<div class="table_container">
-  <table class="ping_table">
-    <tr><th><em id="loss_legend"></em> Packet Loss</th><th><em id="ping_legend"></em> Ping Time</th><th>Timestamp</th></tr>
-    <%= for ping <- @data do %>
-    <tr>
-      <td><%= ping.packet_loss %>%</td>
-      <td><%= Float.round(ping.time, 3) %>ms</td>
-      <td><%= ping.timestamp %></td>
-    </tr>
-    <% end %>
-  </table>
 </div>
