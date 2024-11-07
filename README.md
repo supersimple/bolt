@@ -15,7 +15,7 @@ This nerves build requires fping. The fping nerves system is located at: https:/
 - Send a text message when router is restarting
 
 ## Design
-![](https://raw.githubusercontent.com/supersimple/network_monitor/main/src/fritzing.png)
+![](https://github.com/supersimple/bolt/blob/main/src/fritzing.png)
 
 ## Targets
 
